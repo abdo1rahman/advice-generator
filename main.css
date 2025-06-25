@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+:root {
+  /* *text */
+  --advice: hsl(193, 38%, 86%);
+  --advice-no: hsl(150, 100%, 66%);
+  --quote: 28px;
+  /* *backgrounds */
+  --dark: hsl(217, 19%, 38%);
+  --darker: hsl(217, 19%, 24%);
+  --darkest: hsl(218, 23%, 16%);
+}
+
+html {
+  height: 100dvh;
+}
+
+body {
+  font-family: "Manrope";
+  font-weight: 800;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--darkest);
+}
+
+.card {
+  width: 40%;
+  padding: 1.5rem;
+  background-color: var(--darker);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.322);
+}
+
+.advice-no {
+  color: var(--advice-no);
+  font-size: var(--quote);
+}
+
+.advice {
+  color: var(--advice);
+  font-size: var(--quote);
+  margin-top: 0;
+}
+
+.dice {
+  height: 35px;
+  width: auto;
+}
+
+.generate {
+  width: fit-content;
+  align-self: center;
+  background-color: var(--advice-no);
+  border: none;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: relative;
+  top: 3rem;
+  cursor: pointer;
+  transition: box-shadow 0.5s ease;
+}
+
+.generate:hover {
+  box-shadow: 0 0 30px var(--advice-no);
+}
