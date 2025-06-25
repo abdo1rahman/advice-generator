@@ -21,11 +21,9 @@ async function renderAdvice() {
 
 window.addEventListener("load", renderAdvice);
 dice?.addEventListener("click", () => {
-  renderAdvice;
+  renderAdvice();
   dice.classList.remove('clicked'); // reset animation if already added
   void dice.offsetWidth;            // trigger reflow (forces reset)
   dice.classList.add('clicked');    // apply animation
 });
-// dice?.addEventListener('click', () => {
- 
-// });
+
