@@ -16,7 +16,6 @@ html {
 
 body {
   font-family: "Manrope";
-  font-weight: 800;
   margin: 0;
   height: 100vh;
   display: flex;
@@ -38,12 +37,13 @@ body {
 
 .advice-no {
   color: var(--advice-no);
-  font-size: var(--quote);
+  font-size: 20px;
 }
 
 .advice {
   color: var(--advice);
   font-size: var(--quote);
+  font-weight: 800;
   margin-top: 0;
 }
 
@@ -63,7 +63,7 @@ body {
   position: relative;
   top: 3rem;
   cursor: pointer;
-  transition: box-shadow 0.5s ease;
+  transition: box-shadow 0.2s ease;
 }
 
 .generate:hover {
