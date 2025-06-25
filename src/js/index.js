@@ -1,21 +1,27 @@
+"use strict";
+const adviceElement = document.getElementById("advice");
+const adviceNo = document.getElementById("advice-no");
+const dice = document.getElementById("btn");
 async function getAdvice() {
     const res = await fetch("https://api.adviceslip.com/advice");
     const json = await res.json();
-    return json.slip.advice;
+    return json.slip;
 }
-const adviceElement = document.getElementById("advice");
-window.addEventListener("load", async () => {
-    const advice = await getAdvice();
-    const adviceElement = document.getElementById("advice");
-    if (adviceElement) {
-        adviceElement.textContent = advice;
+async function renderAdvice() {
+    if (!adviceElement || !adviceNo || !dice) {
+        console.warn("Missing DOM elements.");
+        return;
     }
+    const result = await getAdvice();
+    adviceElement.textContent = result.advice;
+    adviceNo.textContent = `ADVICE #${result.id}`;
+}
+window.addEventListener("load", renderAdvice);
+dice?.addEventListener("click", () => {
+    renderAdvice;
+    dice.classList.remove('clicked'); // reset animation if already added
+    void dice.offsetWidth; // trigger reflow (forces reset)
+    dice.classList.add('clicked'); // apply animation
 });
-// Example inside an event listener
-document.getElementById("btn")?.addEventListener("click", async () => {
-    const advice = await getAdvice();
-    if (adviceElement) {
-        adviceElement.textContent = advice;
-    }
-});
-export {};
+// dice?.addEventListener('click', () => {
+// });
