@@ -13,7 +13,7 @@ async function renderAdvice() {
     return;
   }
   const result = await getAdvice();
-  adviceElement.textContent = '"' + result.advice + '"';
+  adviceElement.textContent = "❝" + result.advice + "❞";
   adviceNo.textContent = `ADVICE #${result.id}`;
 }
 window.addEventListener("load", renderAdvice);
